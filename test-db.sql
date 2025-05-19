@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS `test-db`
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_general_ci;
+
+USE `test-db`;
+
+CREATE TABLE IF NOT EXISTS Restaurant(
+	id BIGINT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(50) NOT NULL,
+	address VARCHAR(200) NOT NULL,
+    phoneNumber VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Menu(
+	id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    price DOUBLE NOT NULL,
+    description TEXT,
+    restaurant_id BIGINT NOT NULL,
+    FOREIGN KEY (restaurant_id)
+		REFERENCES Restaurant(id)
+		ON DELETE CASCADE
+);
+    
+SELECT * FROM Restaurant;
+SELECT * FROM Menu;

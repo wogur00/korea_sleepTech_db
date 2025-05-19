@@ -82,6 +82,7 @@ desc students;
 alter table `students`
 drop email;
 
+
 desc students;
 
 # cf) 테이블 수정 시 column 키워드 생략 가능 (add, modify, drop 만 작성 가능)
